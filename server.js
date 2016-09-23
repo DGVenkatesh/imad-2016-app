@@ -5,7 +5,8 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var articleone = {
+var articles = {
+articleone : {
     title: 'article one |venkat',
     heading: 'article one',
     date:'sept 5 2016',
@@ -19,9 +20,35 @@ var articleone = {
             </p>`
     
     
+},
+articletwo : {
+    title: 'article two |venkat',
+    heading: 'article twop',
+    date:'sept 5 2016',
+    content:`
+  <p>
+    This is My First server program in the web pageThis is My First server program in the web pageThis is My First server program in the web pageThis is My First server program in the web pageThis is My First server program in the web pageThis is My First server program in the web pageThis is My First server program in the web pageThis is My First server program in the web pageThis is My First server program in the web pageThis is My First server program in the web pageThis is My First server program in the web pa
+    </p>
+            <p>
+                
+                This is My First server program in the web pageThis is My First server program in the web pageThis is My First server program in the web pageThis is My First server program in the web pageThis is My First server program in the web pageThis is My First server program in the web page
+            </p>`
+},
+articlethree : {title: 'article one |venkat',
+    heading: 'article threee',
+    date:'sept 5 2016',
+    content:`
+  <p>
+    This is My First server program in the web pageThis is My First server program in the web pageThis is My First server program in the web pageThis is My First server program in the web pageThis is My First server program in the web pageThis is My First server program in the web pageThis is My First server program in the web pageThis is My First server program in the web pageThis is My First server program in the web pageThis is My First server program in the web pageThis is My First server program in the web pa
+    </p>
+            <p>
+                
+                This is My First server program in the web pageThis is My First server program in the web pageThis is My First server program in the web pageThis is My First server program in the web pageThis is My First server program in the web pageThis is My First server program in the web page
+            </p>`
+},
 };
 
-function createTemplate (data){
+function createTemplate (data) {
     var title = data.title;
     var date = data.date;
     var heading  = data.heading;
@@ -60,17 +87,11 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/article-one', function (req, res){
-  res.send(createTemplate(articleone));
+app.get(':articlename', function (req, res){
+     var articlename = req.params.articlename;
+  res.send(createTemplate(articles[articlename]));
 });
 
-app.get('/article-two', function (req, res){
-   res.sendFile(path.join(__dirname, 'ui', 'article-two.html')); 
-});
-
-app.get('/article-three', function (req, res){
-   res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));
-});
 
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
