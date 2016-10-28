@@ -5,6 +5,7 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
+
 var articles = {
 'article-one' : {
     title: 'article one |venkat',
@@ -57,7 +58,7 @@ var htmlTemplate = `
 <html>
 <head>
     <title> ${title}</title>
-    
+     <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="/ui/style.css" rel="stylesheet" />
     
 </head>
@@ -87,9 +88,9 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get(':articlename', function (req, res){
-     var articlename = req.params.articlename;
-  res.send(createTemplate(articles[articlename]));
+app.get('/:articleName', function (req, res){
+     var articleName = req.params.articleName;
+  res.send(createTemplate(articles[articleName]));
 });
 
 
