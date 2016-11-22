@@ -81,7 +81,7 @@ var htmlTemplate = `
             ${heading}
         </h3>
         <div>
-            ${date}
+            ${date.toDateSring()}
         </div>
         <div>
             ${content}
