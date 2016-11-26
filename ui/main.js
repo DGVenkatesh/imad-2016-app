@@ -2,7 +2,7 @@ function fun() {
     alert ("Created Sucessfully");
     alert ("Enter Username-user001, Password-12345");
 }
-var submit = document.getElementById("sub");
+var submit = document.getElementById('sub');
 submit.onclick = function () {
     var request = new XMLHttpRequest();
     request.onreadystatechange = function () {
@@ -16,7 +16,7 @@ submit.onclick = function () {
         }
     }; 
     
-    var username = document.getElementById("username").value;
+    var username = document.getElementById('username').value;
     var password = document.getElementById('password').value;
     console.log(username);
     console.log(password);
