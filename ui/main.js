@@ -6,8 +6,9 @@ var submit = document.getElementById('sub');
 submit.onclick = function () {
     var request = new XMLHttpRequest();
     request.onreadystatechange = function () {
-        if(request.readyState === XMLHttpRequest.DONE) {
+        if (request.readyState === XMLHttpRequest.DONE) {
             if (request.status === 200) {
+                console.log('user logged in');
                 alert ('Login Sucessful');
                 
             } else if (request.status === 403){
