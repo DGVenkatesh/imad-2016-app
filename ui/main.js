@@ -8,7 +8,7 @@ submit.onclick = function () {
     request.onreadystatechange = function () {
         if(request.readyState === XMLHttpRequest.DONE) {
             if (request.status === 200) {
-                alert ();
+                alert ('Login Sucessful');
                 
             } else if (request.status === 403){
                 alert('username password incorrect');
