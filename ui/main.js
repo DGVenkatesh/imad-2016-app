@@ -23,6 +23,6 @@ submit.onclick = function () {
     console.log(password);
     request.open('POST', 'http://dgvenkatesh.imad.hasura-app.io/login', true);
     request.setRequestHeader('Content-Type', 'application/json');
-    request.send(JSON.strinfigy({username: user001, password: 12345}));
+    request.send(JSON.strinfigy({username: username, password: password}));
 };
 
