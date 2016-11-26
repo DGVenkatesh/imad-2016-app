@@ -1,3 +1,4 @@
-fun(); {
-    alert ("Creted Sucessfully Username-user001 Password -12345");
+function fun() {
+    alert ("Created Sucessfully");
+    alert ("Enter Username-user001, Password-12345");
 }
